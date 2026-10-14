@@ -1,14 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import TablaMultiplicar from "./components/TablaMultiplicar";
-import Encabezado from "./components/Encabezado";
+import Encabezado from "./components/layout/Encabezado";
+import MenuJuegos from "./components/layout/MenuJuegos";
+import TablaMultiplicar from "./components/comunes/TablaMultiplicar";
 
-import PreguntasGame from "./components/PreguntasGame";
-import MenuJuegos from "./components/MenuJuegos";
+import PreguntasGame from "./components/juegos/PreguntasGame";
+import CazaResultadoGame from "./components/juegos/CazaResultadoGame";
 
 function App() {
   const [tablaSeleccionada, setTablaSeleccionada] = useState(2);
-  const [numeroPregunta, setNumeroPregunta] = useState(5);
+  const [numeroPregunta, setNumeroPregunta] = useState(
+    () => Math.floor(Math.random() * 10) + 1,
+  );
   const [mostrarTabla, setMostrarTabla] = useState(true);
   const tablas = [2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [juegoActivo, setJuegoActivo] = useState("preguntas");
@@ -35,26 +38,30 @@ function App() {
 
       <MenuJuegos juegoActivo={juegoActivo} setJuegoActivo={setJuegoActivo} />
       <section className="contenedor-principal">
-        <button
-          className="btn-ocultar-tabla"
-          onClick={() => setMostrarTabla(!mostrarTabla)}
-        >
-          {mostrarTabla ? "Ocultar tabla" : "Mostrar tabla"}
-        </button>
-        {mostrarTabla && (
-          <TablaMultiplicar
-            tabla={tablaSeleccionada}
-            numeroPregunta={numeroPregunta}
-          />
-        )}
-        <p>Juego activo: {juegoActivo}</p>
         {juegoActivo === "preguntas" && (
           <>
+            <button
+              className="btn-ocultar-tabla"
+              onClick={() => setMostrarTabla(!mostrarTabla)}
+            >
+              {mostrarTabla ? "Ocultar tabla" : "Mostrar tabla"}
+            </button>
+            {mostrarTabla && (
+              <TablaMultiplicar
+                tabla={tablaSeleccionada}
+                numeroPregunta={numeroPregunta}
+              />
+            )}
             <PreguntasGame
               tablaSeleccionada={tablaSeleccionada}
               numeroPregunta={numeroPregunta}
               setNumeroPregunta={setNumeroPregunta}
             />
+          </>
+        )}
+        {juegoActivo === "caza" && (
+          <>
+            <CazaResultadoGame tablaSeleccionada={tablaSeleccionada} />
           </>
         )}
       </section>

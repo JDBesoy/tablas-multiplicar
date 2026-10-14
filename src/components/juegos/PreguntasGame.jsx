@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Marcador from "./Marcador";
-import Pregunta from "./Pregunta";
-import Respuesta from "./Respuesta";
+import Marcador from "../preguntas/Marcador"
+import Pregunta from "../preguntas/Pregunta";
+import Respuesta from "../preguntas/Respuesta";
 
 function PreguntasGame({
   tablaSeleccionada,

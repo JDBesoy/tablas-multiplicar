@@ -332,4 +332,75 @@ body {
     grid-row: auto;
   }
 
+  .opciones-caza {
+  grid-template-columns: 1fr;
+}
+
+}
+
+.caza-resultado {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 3;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fefce8;
+  border: 3px solid #eab308;
+  border-radius: 20px;
+}
+
+.caza-resultado h2 {
+  text-align: center;
+  color: #ca8a04;
+  font-size: 2rem;
+}
+
+.pregunta-caza {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #713f12;
+  margin-bottom: 25px;
+}
+.opciones-caza {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.tarjeta-respuesta {
+  background: linear-gradient(
+    135deg,
+    #60a5fa,
+    #2563eb
+  );
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 25px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.tarjeta-respuesta:hover {
+  transform: scale(1.08);
+}
+
+.mensaje-caza {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.panel-inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.marcador-caza {
+  display: flex;
+  gap: 20px;
 }
