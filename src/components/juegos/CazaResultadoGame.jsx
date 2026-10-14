@@ -36,7 +36,6 @@ function CazaResultadoGame({ tablaSeleccionada }) {
       <p className="pregunta-caza">
         ¿Cuánto es {tablaSeleccionada} × {numeroPregunta}?
       </p>
-      <p>Respuesta correcta: {respuestaCorrecta}</p>
       <div className="opciones-caza">
         {opcionesMezcladas.map((opcion) => (
           <button
@@ -47,13 +46,13 @@ function CazaResultadoGame({ tablaSeleccionada }) {
             {opcion}
           </button>
         ))}
+        </div>
         <div className="marcador-caza">
           <p className="mensaje-caza">{mensaje}</p>
 
           <p>Aciertos: {aciertos}</p>
 
           <p>Errores: {errores}</p>
-        </div>
       </div>
     </div>
   );
