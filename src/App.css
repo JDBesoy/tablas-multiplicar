@@ -52,6 +52,21 @@ body {
   transform: scale(1.15);
 }
 
+.btn-ocultar-tabla {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  align-self:center;
+  background-color: #052872;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
 .selector-tablas p {
   color: #f1f5f9;
   font-size: 1.2rem;
@@ -65,7 +80,7 @@ body {
 
 .tabla-multiplicar {
   grid-column: 1;
-  grid-row: 1 / span 3;
+  grid-row: 2 / span 3;
   margin-top: 20px;
   padding: 20px;
   background-color:rgb(39, 70, 247);
@@ -95,7 +110,7 @@ body {
 
 .pregunta {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 1 /span 2;
   background-color: rgb(211, 37, 218);
   border: 3px solid #0b1bf5;
   border-radius: 20px;
@@ -116,7 +131,7 @@ body {
 
 .respuesta {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 3;
   background-color: #ecfeff;
   border: 3px solid #06b6d4;
   border-radius: 20px;
@@ -182,7 +197,7 @@ body {
 
 .marcador {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 4;
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
@@ -224,8 +239,8 @@ body {
 }
 
 .menu-juegos {
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 5px;
+  padding: 10px;
   background-color: #1e293b;
   border-radius: 15px;
   text-align: center;
@@ -268,4 +283,24 @@ body {
   );
   transform: scale(1.1);
   box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+}
+
+.btn-reiniciar {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn-reiniciar:hover {
+  background-color: #dc2626;
 }

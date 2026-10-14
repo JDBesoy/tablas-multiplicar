@@ -34,14 +34,13 @@ function App() {
       </div>
 
       <MenuJuegos juegoActivo={juegoActivo} setJuegoActivo={setJuegoActivo} />
-      <br />
-      <button
-        className="btn-tabla"
-        onClick={() => setMostrarTabla(!mostrarTabla)}
-      >
-        {mostrarTabla ? "Ocultar tabla" : "Mostrar tabla"}
-      </button>
       <section className="contenedor-principal">
+        <button
+          className="btn-ocultar-tabla"
+          onClick={() => setMostrarTabla(!mostrarTabla)}
+        >
+          {mostrarTabla ? "Ocultar tabla" : "Mostrar tabla"}
+        </button>
         {mostrarTabla && (
           <TablaMultiplicar
             tabla={tablaSeleccionada}

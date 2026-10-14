@@ -3,7 +3,11 @@ import Marcador from "./Marcador";
 import Pregunta from "./Pregunta";
 import Respuesta from "./Respuesta";
 
-function PreguntasGame({ tablaSeleccionada , numeroPregunta, setNumeroPregunta }) {
+function PreguntasGame({
+  tablaSeleccionada,
+  numeroPregunta,
+  setNumeroPregunta,
+}) {
   const [respuestaUsuario, setRespuestaUsuario] = useState("");
   const [comprobacion, setComprobacion] = useState("");
   const [aciertos, setAciertos] = useState(0);
@@ -25,6 +29,14 @@ function PreguntasGame({ tablaSeleccionada , numeroPregunta, setNumeroPregunta }
     // Limpia la respuesta del usuario
     setRespuestaUsuario("");
   }
+
+  function reiniciarMarcador() {
+    setAciertos(0);
+    setErrores(0);
+    setComprobacion("");
+    setRespuestaUsuario("");
+    setNumeroPregunta(Math.floor(Math.random() * 10) + 1);
+  }
   return (
     <>
       <Pregunta tabla={tablaSeleccionada} numeroPregunta={numeroPregunta} />
@@ -35,6 +47,9 @@ function PreguntasGame({ tablaSeleccionada , numeroPregunta, setNumeroPregunta }
         comprobacion={comprobacion}
       />
       <Marcador puntuacion={puntuacion} aciertos={aciertos} errores={errores} />
+      <button className="btn-reiniciar" onClick={reiniciarMarcador}>
+        🔄 Reiniciar marcador
+      </button>
     </>
   );
 }
