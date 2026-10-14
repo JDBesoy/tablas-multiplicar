@@ -304,3 +304,32 @@ body {
 .btn-reiniciar:hover {
   background-color: #dc2626;
 }
+
+
+@media (max-width: 768px) {
+
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-multiplicar {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .pregunta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .respuesta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .marcador {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+}
