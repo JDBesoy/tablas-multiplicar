@@ -4,10 +4,10 @@ function MenuJuegos({ juegoActivo, setJuegoActivo }) {
       id: "preguntas",
       texto: "📝 Preguntas",
     },
-    {
+    /* {
       id: "memoria",
       texto: "🃏 Memoria",
-    },
+    }, */
   ];
   return (
     <div className="menu-juegos">
