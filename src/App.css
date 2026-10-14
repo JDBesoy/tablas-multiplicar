@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b121a;
+}
+
+.app {
+  justify-content: center;
+}
+
+.titulo-principal {
+  background-color: #dbeafe;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.titulo-principal h1 {
+  color: #2563eb;
+  margin-bottom: 5px;
+}
+
+.titulo-principal p {
+  color: #475569;
+}
+
+
+.selector-tablas {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-tabla {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+.btn-tabla:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.5);
+}
+
+.btn-tabla-activa {
+  background-color: #f59e0b;
+  color: white;
+  transform: scale(1.15);
+}
+
+.selector-tablas p {
+  color: #f1f5f9;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+
+.tabla-multiplicar {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  margin-top: 20px;
+  padding: 20px;
+  background-color:rgb(39, 70, 247);
+  border-radius: 12px;
+  border: 3px solid #0b1bf5;
+}
+
+.tabla-titulo {
+  text-align: center;
+  color: #042670;
+  margin-bottom: 15px;
+}
+
+.operacion {
+  background-color:rgb(39, 70, 247);
+  color: rgb(9, 3, 36);
+  font-size: 1.2rem;
+}
+
+.operacion-activa {
+  background-color: #fef08a;
+  border: 2px solid #facc15;
+  border-radius: 8px;
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.pregunta {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: rgb(211, 37, 218);
+  border: 3px solid #0b1bf5;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  height: 5rem;
+}
+
+.texto-pregunta {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(9, 3, 36);
+  margin: 0;
+  padding: 10px;
+}
+
+.respuesta {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #ecfeff;
+  border: 3px solid #06b6d4;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.respuesta input {
+  width: 80px;
+  height: 40px;
+  padding: 10px;
+  font-size:2rem;
+  border: 2px solid #06b6d4;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  font-weight: bold;
+}
+
+.respuesta input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
+}
+
+.btn-comprobar {
+  display: block;
+  margin: 15px auto;
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+
+.mensaje-correcto {
+  color: #16a34a;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mensaje-error {
+  color: #dc2626;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.respuesta input::-webkit-outer-spin-button,
+.respuesta input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.respuesta input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.marcador {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ede9fe;
+  border: 3px solid #8b5cf6;
+  border-radius: 20px;
+}
+
+.marcador h2 {
+  text-align: center;
+  color: #6d28d9;
+  margin-top: 0;
+}
+
+.marcador-item {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+.marcador-item p {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.aciertos {
+  color: #16a34a;
+}
+
+.errores {
+  color: #dc2626;
+}
+
+.puntuacion {
+  color: #2563eb;
+}
+
+.menu-juegos {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #1e293b;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.menu-juegos p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-juego {
+  background: linear-gradient(
+    135deg,
+    #f97316,
+    #facc15
+  );
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 12px 20px;
+  margin: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-juego:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-juego-activo {
+  background: linear-gradient(
+    135deg,
+    #22c55e,
+    #84cc16
+  );
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+}
