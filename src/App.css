@@ -8,6 +8,85 @@ body {
   justify-content: center;
 }
 
+
+.pantalla-inicio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0b121a;
+  color: white;
+  border:#052872 solid 3px;
+}
+
+.tarjeta-inicio {
+  width: 50%;
+  max-width: 90%;
+  padding: 30px;
+  background-color: #17212b;
+  border: 3px solid #052872;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(5, 40, 114, 0.5);
+}
+
+.pantalla-inicio h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.pantalla-inicio p{
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.pantalla-inicio input {
+  display: block;
+  margin: 5px auto;
+  width: 80%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #052872;
+  border-radius: 8px;
+  outline: none;
+}
+
+.btn-nombres {
+  margin: 5px auto;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+.btn-nombres:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.2);
+}
+
+
+.btn-crear-jugador {
+  margin: 5px auto;
+  background-color: #5a85e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+.btn-crear-jugador:hover {
+  background-color: #3d63ce;
+  transform: scale(1.2);
+}
+
 .titulo-principal {
   background-color: #dbeafe;
   padding: 20px;
@@ -336,6 +415,28 @@ body {
   grid-template-columns: 1fr;
 }
 
+.pantalla-inicio h1 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+.pantalla-inicio p{
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-nombres {
+  margin: 5px auto;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
 }
 
 .caza-resultado {
