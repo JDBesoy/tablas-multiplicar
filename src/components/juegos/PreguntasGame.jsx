@@ -15,6 +15,10 @@ function PreguntasGame({
   const puntuacion = aciertos;
   function comprobarRespuesta() {
     const respuestaCorrecta = tablaSeleccionada * numeroPregunta;
+    if (respuestaUsuario.trim() === "") {
+      setComprobacion("Por favor, ingresa una respuesta.");
+      return;
+    }
     if (Number(respuestaUsuario) === respuestaCorrecta) {
       setComprobacion("¡Correcto!");
       setAciertos(aciertos + 1);

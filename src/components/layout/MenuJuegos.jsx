@@ -8,6 +8,10 @@ function MenuJuegos({ juegoActivo, setJuegoActivo }) {
       id: "caza",
       texto: "🎯 Caza el Resultado",
     }, 
+     {
+      id: "verdadero-falso",
+      texto: "✅ Verdadero o Falso",
+    }, 
   ];
   return (
     <div className="menu-juegos">

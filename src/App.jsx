@@ -6,6 +6,7 @@ import TablaMultiplicar from "./components/comunes/TablaMultiplicar";
 
 import PreguntasGame from "./components/juegos/PreguntasGame";
 import CazaResultadoGame from "./components/juegos/CazaResultadoGame";
+import VerdaderoFalsoGame from "./components/juegos/VerdaderoFalsoGame";
 
 function App() {
   const [tablaSeleccionada, setTablaSeleccionada] = useState(2);
@@ -62,6 +63,11 @@ function App() {
         {juegoActivo === "caza" && (
           <>
             <CazaResultadoGame tablaSeleccionada={tablaSeleccionada} />
+          </>
+        )}
+        {juegoActivo === "verdadero-falso" && (
+          <>
+            <VerdaderoFalsoGame tablaSeleccionada={tablaSeleccionada} />
           </>
         )}
       </section>
