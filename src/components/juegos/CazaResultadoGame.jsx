@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-function CazaResultadoGame({ tablaSeleccionada }) {
+function CazaResultadoGame({
+  tablaSeleccionada,
+  registrarAcierto,
+  registrarError,
+}) {
   const [numeroPregunta, setNumeroPregunta] = useState(
     () => Math.floor(Math.random() * 10) + 1,
   );
@@ -21,10 +25,12 @@ function CazaResultadoGame({ tablaSeleccionada }) {
     const nuevoNumero = () => Math.floor(Math.random() * 10) + 1;
     if (opcion === respuestaCorrecta) {
       setMensaje("✅ ¡Correcto!");
-      setAciertos(aciertos + 1);
+      setAciertos((actual) => actual + 1);
+      registrarAcierto();
     } else {
       setMensaje("❌ Incorrecto");
-      setErrores(errores + 1);
+      setErrores((actual) => actual + 1);
+      registrarError();
     }
     setNumeroPregunta(nuevoNumero);
   }
@@ -46,13 +52,13 @@ function CazaResultadoGame({ tablaSeleccionada }) {
             {opcion}
           </button>
         ))}
-        </div>
-        <div className="marcador-caza">
-          <p className="mensaje-caza">{mensaje}</p>
+      </div>
+      <div className="marcador-caza">
+        <p className="mensaje-caza">{mensaje}</p>
 
-          <p>Aciertos: {aciertos}</p>
+        <p>Aciertos: {aciertos}</p>
 
-          <p>Errores: {errores}</p>
+        <p>Errores: {errores}</p>
       </div>
     </div>
   );

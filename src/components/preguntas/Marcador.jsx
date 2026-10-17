@@ -1,4 +1,4 @@
-function Marcador({ puntuacion, aciertos, errores }) {
+function Marcador({ aciertos, errores }) {
   return (
     <div className="marcador">
       <div className="marcador-item">
@@ -11,10 +11,6 @@ function Marcador({ puntuacion, aciertos, errores }) {
         <p className="errores">{errores}</p>
       </div>
 
-      <div className="marcador-item">
-        <h3>Puntuación</h3>
-        <p className="puntuacion">{puntuacion}</p>
-      </div>
     </div>
   );
 }

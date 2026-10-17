@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-function VerdaderoFalsoGame({ tablaSeleccionada }) {
+function VerdaderoFalsoGame({
+  tablaSeleccionada,
+  registrarAcierto,
+  registrarError,
+}) {
   const [numeroPregunta, setNumeroPregunta] = useState(
     Math.floor(Math.random() * 10) + 1,
   );
@@ -33,10 +37,12 @@ function VerdaderoFalsoGame({ tablaSeleccionada }) {
   function seleccionarRespuesta(respuestaUsuario) {
     if (respuestaUsuario === esVerdadera) {
       setMensaje("✅ ¡Correcto!");
-      setAciertos(actual => actual + 1);
+      setAciertos((actual) => actual + 1);
+      registrarAcierto();
     } else {
       setMensaje("❌ Incorrecto");
-      setErrores(actual => actual + 1);
+      setErrores((actual) => actual + 1);
+      registrarError();
     }
     generarPregunta();
   }
@@ -45,14 +51,19 @@ function VerdaderoFalsoGame({ tablaSeleccionada }) {
     <div className="verdadero-falso">
       <h2>✅ Verdadero o Falso</h2>
       <p className="pregunta-verdadero-falso">
-        {tablaSeleccionada} X {numeroPregunta} ={" "}
-        {resultadoMostrado}
+        {tablaSeleccionada} X {numeroPregunta} = {resultadoMostrado}
       </p>
       <div className="opciones-verdadero-falso">
-        <button className="tarjeta-respuesta-verdadero" onClick={() => seleccionarRespuesta(true)}>
+        <button
+          className="tarjeta-respuesta-verdadero"
+          onClick={() => seleccionarRespuesta(true)}
+        >
           Verdadero
         </button>
-        <button className="tarjeta-respuesta-falso" onClick={() => seleccionarRespuesta(false)}>
+        <button
+          className="tarjeta-respuesta-falso"
+          onClick={() => seleccionarRespuesta(false)}
+        >
           Falso
         </button>
       </div>

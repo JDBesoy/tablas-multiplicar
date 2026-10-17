@@ -13,8 +13,19 @@ function PantallaInicio({ iniciarJuego }) {
 
     if (!nuevosJugadores[nombre]) {
       nuevosJugadores[nombre] = {
-        recordGeneral: 0,
+        estadisticasHoy: {
+          fecha: "0000-00-00",
+          aciertos: 0,
+          errores: 0,
+        },
+        aciertosTotales: 0,
+        erroresTotales: 0,
+
+        rachaActual: 0,
+        mejorRacha: 0,
+
         tablas: {},
+        logros: {},
       };
     }
 
@@ -44,7 +55,11 @@ function PantallaInicio({ iniciarJuego }) {
 
         <p>Quién va a jugar?</p>
         {Object.keys(jugadores).map((nombre) => (
-          <button className="btn-nombres" key={nombre} onClick={() => seleccionarJugador(nombre)}>
+          <button
+            className="btn-nombres"
+            key={nombre}
+            onClick={() => seleccionarJugador(nombre)}
+          >
             {nombre}
           </button>
         ))}
