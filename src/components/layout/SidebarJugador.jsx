@@ -4,15 +4,19 @@ function SidebarJugador({
   tablaSeleccionada,
   setTablaSeleccionada,
   setJugadorActivo,
-  mejorRacha
+  mejorRacha,
 }) {
+  const jugadores = JSON.parse(localStorage.getItem("jugadores")) || {};
+
+  const jugador = jugadores[jugadorActivo];
   return (
     <aside className="sidebar-jugador">
       <div className="perfil-jugador">
         <h3>{jugadorActivo}</h3>
         <p>👑 {mejorRacha} </p>
       </div>
-      <button className="btn-cambiar-jugador"
+      <button
+        className="btn-cambiar-jugador"
         onClick={() => {
           localStorage.removeItem("jugadorActivo");
           setJugadorActivo("");
@@ -34,12 +38,26 @@ function SidebarJugador({
                   ? "btn-tabla btn-tabla-activa"
                   : "btn-tabla"
               }
-              onClick={() => setTablaSeleccionada(tabla)}
+              onClick={() => {
+                setTablaSeleccionada(tabla);
+                // Al cambiar de tabla se reinicia la racha actual
+                // pero se conserva la mejor racha histórica.
+                const jugadores =
+                  JSON.parse(localStorage.getItem("jugadores")) || {};
+
+                const jugador = jugadores[jugadorActivo];
+
+                jugador.tablas[tabla].rachaActual = 0;
+
+                localStorage.setItem("jugadores", JSON.stringify(jugadores));
+              }}
             >
               {tabla}
             </button>
 
-            <span className="ranking-tabla">--</span>
+            <span className="ranking-tabla">
+              {jugador?.tablas?.[tabla]?.mejorRacha ?? 0}
+            </span>
           </div>
         ))}
       </div>

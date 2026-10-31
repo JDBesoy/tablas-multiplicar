@@ -30,8 +30,21 @@ function App() {
   if (!jugadorActivo) {
     return <PantallaInicio iniciarJuego={setJugadorActivo} />;
   }
-   
-  function registrarAcierto() {
+
+  function registrarAcierto(tabla) {
+    const jugadores = JSON.parse(localStorage.getItem("jugadores")) || {};
+
+    const jugador = jugadores[jugadorActivo];
+    //const nuevaRacha = estadisticasSesion.rachaActual + 1;
+
+    jugador.tablas[tabla].aciertos += 1;
+    jugador.tablas[tabla].rachaActual += 1;
+    jugador.tablas[tabla].mejorRacha = Math.max(
+      jugador.tablas[tabla].mejorRacha,
+      jugador.tablas[tabla].rachaActual
+    );
+
+    localStorage.setItem("jugadores", JSON.stringify(jugadores));
     setEstadisticasSesion((actual) => {
       const nuevaRacha = actual.rachaActual + 1;
 
@@ -47,7 +60,16 @@ function App() {
       };
     });
   }
-  function registrarError() {
+  function registrarError(tabla) {
+    const jugadores = JSON.parse(localStorage.getItem("jugadores")) || {};
+
+    const jugador = jugadores[jugadorActivo];
+
+    jugador.tablas[tabla].errores += 1;
+    jugador.tablas[tabla].rachaActual = 0;
+
+    localStorage.setItem("jugadores", JSON.stringify(jugadores));
+
     setEstadisticasSesion((actual) => ({
       ...actual,
 

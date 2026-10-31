@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Marcador from "../preguntas/Marcador";
 import Pregunta from "../preguntas/Pregunta";
 import Respuesta from "../preguntas/Respuesta";
 
@@ -23,13 +22,13 @@ function PreguntasGame({
     if (Number(respuestaUsuario) === respuestaCorrecta) {
       setComprobacion("¡Correcto!");
       setAciertos((actual) => actual + 1);
-      registrarAcierto();
+      registrarAcierto(tablaSeleccionada);
     } else {
       setComprobacion(
         `Incorrecto. La respuesta correcta es ${respuestaCorrecta}`,
       );
       setErrores((actual) => actual + 1);
-      registrarError();
+      registrarError(tablaSeleccionada);
     }
     // Genera un nuevo número aleatorio entre 1 y 10
     setNumeroPregunta(Math.floor(Math.random() * 10) + 1);

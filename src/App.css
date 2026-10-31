@@ -370,10 +370,6 @@ body {
   margin: 0;
 }
 
-/* Firefox */
-.respuesta input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 .marcador {
   display: flex;
@@ -585,7 +581,7 @@ body {
   border: none;
   border-radius: 20px;
   padding: 25px;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -612,7 +608,7 @@ body {
   border: none;
   border-radius: 20px;
   padding: 25px;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -696,11 +692,11 @@ body {
 }
 
 .tarjeta-respuesta-verdadero {
-  font-size: 1.8rem;
+  font-size: 1rem;
 }
 
 .tarjeta-respuesta-falso {
-  font-size: 1.8rem;
+  font-size: 1rem;
 }
 
 .sidebar-tabla {

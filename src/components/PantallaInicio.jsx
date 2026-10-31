@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function PantallaInicio({ iniciarJuego }) {
   const [nombre, setNombre] = useState("");
+
   const [jugadores, setJugadores] = useState(
     JSON.parse(localStorage.getItem("jugadores")) || {},
   );
@@ -24,7 +25,70 @@ function PantallaInicio({ iniciarJuego }) {
         rachaActual: 0,
         mejorRacha: 0,
 
-        tablas: {},
+        tablas: {
+          2: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          3: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          4: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          5: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          6: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          7: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          8: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          9: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+
+          10: {
+            mejorRacha: 0,
+            aciertos: 0,
+            errores: 0,
+            rachaActual: 0,
+          },
+        },
         logros: {},
       };
     }
@@ -44,6 +108,17 @@ function PantallaInicio({ iniciarJuego }) {
   }
   function seleccionarJugador(nombre) {
     localStorage.setItem("jugadorActivo", nombre);
+
+    const jugadores = JSON.parse(localStorage.getItem("jugadores")) || {};
+
+    const jugador = jugadores[nombre];
+
+    // Reiniciar rachas actuales de todas las tablas
+    Object.keys(jugador.tablas).forEach((tabla) => {
+      jugador.tablas[tabla].rachaActual = 0;
+    });
+
+    localStorage.setItem("jugadores", JSON.stringify(jugadores));
 
     iniciarJuego(nombre);
   }
