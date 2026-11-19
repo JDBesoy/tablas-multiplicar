@@ -628,6 +628,35 @@ body {
   font-weight: bold;
 }
 
+.contenedor-jugador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-eliminar-jugador {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #ef4444;
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: transform 0.2s ease;
+}
+
+.btn-eliminar-jugador:hover {
+  transform: scale(1.1);
+  background-color: #dc2626;
+}
+
 
 @media (max-width: 768px) {
 

@@ -6,7 +6,24 @@ function PantallaInicio({ iniciarJuego }) {
   const [jugadores, setJugadores] = useState(
     JSON.parse(localStorage.getItem("jugadores")) || {},
   );
+  function eliminarJugador(nombre) {
+    if (!window.confirm(`¿Eliminar al jugador "${nombre}"?`)) {
+      return;
+    }
+    const nuevosJugadores = {
+      ...jugadores,
+    };
 
+    delete nuevosJugadores[nombre];
+
+    localStorage.setItem("jugadores", JSON.stringify(nuevosJugadores));
+
+    setJugadores(nuevosJugadores);
+
+    if (localStorage.getItem("jugadorActivo") === nombre) {
+      localStorage.removeItem("jugadorActivo");
+    }
+  }
   function crearJugador(nombre) {
     const nuevosJugadores = {
       ...jugadores,
@@ -130,13 +147,21 @@ function PantallaInicio({ iniciarJuego }) {
 
         <p>Quién va a jugar?</p>
         {Object.keys(jugadores).map((nombre) => (
-          <button
-            className="btn-nombres"
-            key={nombre}
-            onClick={() => seleccionarJugador(nombre)}
-          >
-            {nombre}
-          </button>
+          <div>
+            <button
+              className="btn-nombres"
+              key={nombre}
+              onClick={() => seleccionarJugador(nombre)}
+            >
+              {nombre}
+            </button>
+            <button
+              className="btn-eliminar-jugador"
+              onClick={() => eliminarJugador(nombre)}
+            >
+              ✕
+            </button>
+          </div>
         ))}
 
         <input
